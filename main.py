@@ -1,4 +1,4 @@
-from stats import get_character_count, get_word_count
+from stats import get_character_count, get_sorted_count, get_word_count
 
 
 def get_book_text(
@@ -14,7 +14,8 @@ def main():
     num_words = get_word_count(book_contents)
     print(f"Found {num_words} total words")
     chars = get_character_count(book_contents)
-    print(chars)
+    sorted_chars = get_sorted_count(chars)
+    print(sorted_chars)
 
 
 main()
