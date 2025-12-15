@@ -10,12 +10,21 @@ def get_book_text(
 
 
 def main():
+    print(
+        "============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt..."
+    )
     book_contents = get_book_text("./books/frankenstein.txt")
     num_words = get_word_count(book_contents)
-    print(f"Found {num_words} total words")
     chars = get_character_count(book_contents)
     sorted_chars = get_sorted_count(chars)
-    print(sorted_chars)
+
+    # We have everything we need, time to print the report
+    print(f"----------- Word Count ----------\nFound {num_words} total words")
+    print("--------- Character Count -------")
+    for dict in sorted_chars:
+        if dict["char"].isalpha():
+            print(f"{dict['char']}: {dict['num']}")
+    print("============= END ===============")
 
 
 main()
